@@ -7,10 +7,9 @@ class App extends Component {
     keyCodeData: keyCodeObj,
   };
   render() {
-    console.log("KEYCODE DATA", this.state.keyCodeData);
     return (
       <div className="app-wrapper">
-        <Keys />
+        <Keys keyData={this.state.keyCodeData} />
       </div>
     );
   }
