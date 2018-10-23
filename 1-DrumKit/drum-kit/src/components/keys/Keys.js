@@ -25,6 +25,7 @@ export const Keys = props => {
     display: "block",
     fontSize: "4rem",
   };
+  console.log("KEYS", props);
   return (
     <div className="keys-wrapper" style={keyWrapperStyles}>
       {// loop over keyCodeDataObj
@@ -35,8 +36,11 @@ export const Keys = props => {
             className="key"
             key={key.key}
             style={keyStyles}
+            tabIndex={key.key}
           >
-            <kbd style={keyboardDownStyle}>{key.key}</kbd>
+            <kbd style={keyboardDownStyle} onKeyPress={props.playSoundHandler}>
+              {key.key}
+            </kbd>
             <span className="sound">{key.sound}</span>
           </div>
         );
