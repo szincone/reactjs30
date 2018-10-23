@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Keys } from "./components/keys/Keys";
+import { Keys } from "./components/keys/Keys.js";
+import { Audio } from "./components/audio/Audio.js";
 import { keyCodeObj } from "./data/keyCodeData.js";
 import "./App.css";
 class App extends Component {
@@ -39,6 +40,10 @@ class App extends Component {
         onKeyDown={event => this.playSoundHandler(event)}
       >
         <Keys
+          keyData={this.state.keyCodeData}
+          playSoundHandler={this.playSoundHandler}
+        />
+        <Audio
           keyData={this.state.keyCodeData}
           playSoundHandler={this.playSoundHandler}
         />
